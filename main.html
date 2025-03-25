@@ -1,16 +1,38 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window Size Display</title>
+  <style>
+    #sizeInfo {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+  <div id="sizeInfo">
+    <h1>Width: <span id="width"></span> and Height: <span id="height"></span></h1>
+  </div>
+
+  <script>
+    function updateWindowSize() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      document.getElementById("width").textContent = width;
+      document.getElementById("height").textContent = height;
+    }
+
+    // Update size on load
+    updateWindowSize();
+
+    // Listen for resize event
+    window.addEventListener("resize", updateWindowSize);
+  </script>
 
 </body>
-
 </html>
